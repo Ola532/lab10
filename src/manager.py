@@ -220,7 +220,17 @@ class Manager:
         return total_income - total_due
 
     def has_any_bills(self, apartment_key: str, year: int, month: int) -> bool:
-        """Check if there are any bills for a given apartment key, year, and month."""
+        """Check if there are any bills for a given apartment key, year, and month.
+
+        Args:
+        ----
+            apartment_key (str): The key.
+
+        Returns:
+        -------
+            float: The bill.
+
+        """
         if month < 1 or month > 12:
             raise ValueError("Month must be between 1 and 12")
         if apartment_key not in self.apartments:
